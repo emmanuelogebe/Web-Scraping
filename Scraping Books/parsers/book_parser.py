@@ -1,4 +1,4 @@
-import re
+
 
 from locators.book_locators import BookLocators
 
@@ -20,7 +20,6 @@ class BookParser:
 
     def __repr__(self):
         return f'A book titled -- {self.name}, has a price of {self.price} and is rated {self.rating} stars.'
-        #return f'<Book {self.name}, ${self.price} ({self.rating} stars>'
 
     @property
     def name(self):
@@ -42,16 +41,6 @@ class BookParser:
         
         return item_price
     
-    """
-    @property
-    def price(self):
-        locator = BookLocators.PRICE_LOCATOR
-        item_price = self.parent.select_one(locator).string #$51.45
-
-        pattern = '$([0-9]+\.[0-9]+)'
-        matcher = re.search(pattern, item_price)
-        return float(matcher.group(1)) #51.45
-"""
 
     @property
     def rating(self):
